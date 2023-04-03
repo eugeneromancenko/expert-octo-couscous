@@ -34,11 +34,11 @@ variable "bigquery_role_assignment" {
   default = {
     vmo2_tech_test = {
       role = "roles/bigquery.dataEditor"
-      user = "jevgenijs.romancenko@gmail.com"
+      user = "your-email"
     }
-    vmo2_tech_test = {
-      role = "OWNER"
-      user = "eugene@romancenko.com"
-    }
+    # vmo2_tech_test = {
+    #   role = "OWNER"
+    #   user = "owner-email"
+    # }
   }
 }

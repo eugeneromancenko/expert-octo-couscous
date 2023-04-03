@@ -12,8 +12,6 @@ resource "google_project_service" "container" {
     create = "10m"
     delete = "5m"
   }
-
-  disable_on_destroy = true
 }
 
 resource "google_project_service" "compute" {
@@ -24,8 +22,6 @@ resource "google_project_service" "compute" {
     create = "10m"
     delete = "5m"
   }
-
-  disable_on_destroy = true
 }
 
 data "google_project_service" "compute" {

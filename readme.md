@@ -12,7 +12,7 @@ Before you begin, you must have the following:
 ## Getting started
 1. Clone this repository: `git clone <repo-url>`
 2. Navigate to the cloned repository directory: `cd <repo-name>`
-3. update makefile with gcp project specific details like `PROJECT_ID` and specify uniq `BUCKET_NAME` to store tfstate file  
+3. update makefile with gcp project specific details like `PROJECT_ID` and specify unique `BUCKET_NAME` to store tfstate file , as well as `YOUR_EMAIL` it will be used for bigquery_role_assignment variable to set bigquery permission for you. 
 4. run `make all` to do e2e deployment
 5. run `make destroy` to destroy all resources created
 
