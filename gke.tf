@@ -17,11 +17,13 @@ resource "google_project_service" "container" {
 resource "google_project_service" "compute" {
   project = var.project
   service = "compute.googleapis.com"
-
+  
   timeouts {
     create = "10m"
     delete = "5m"
   }
+  
+  disable_dependent_services=true
 }
 
 data "google_project_service" "compute" {

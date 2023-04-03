@@ -1,6 +1,6 @@
 # Define variables
 PROJECT_ID=formal-scout-382613
-BUCKET_NAME=formal-scout-state222
+BUCKET_NAME=formal-scout-state333
 # Email for bigquery_role_assignment
 YOUR_EMAIL=eugene@romancenko.com
 
@@ -10,9 +10,9 @@ ENV=dev
 # Define commands
 TERRAFORM_CMD=terraform
 SED=sed -i 's/your-email/$(YOUR_EMAIL)/g' variables.tf
-TERRAFORM_INIT=$(TERRAFORM_CMD) init -backend-config="bucket=$(BUCKET_NAME)" -backend-config="prefix=terraform/state.tfstate"
+TERRAFORM_INIT=$(TERRAFORM_CMD) init -backend-config="bucket=$(BUCKET_NAME)" -backend-config="prefix=state.tfstate"
 TERRAFORM_PLAN=$(TERRAFORM_CMD) plan -var project=$(PROJECT_ID) -var region=$(REGION) -var env=$(ENV) -out=tfplan
-TERRAFORM_APPLY=$(TERRAFORM_CMD) apply tfplan --auto-approve
+TERRAFORM_APPLY=$(TERRAFORM_CMD) apply tfplan
 TERRAFORM_DESTROY=$(TERRAFORM_CMD) destroy -var project=$(PROJECT_ID) -var region=$(REGION) -var env=$(ENV) --auto-approve
 
 # Define targets
