@@ -1,6 +1,6 @@
 resource "google_compute_network" "vpc_network" {
   depends_on = [google_project_service.compute]
-  
+
   project                 = var.project
   name                    = "${var.project}-${var.env}-vpc"
   auto_create_subnetworks = false

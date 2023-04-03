@@ -17,13 +17,13 @@ resource "google_project_service" "container" {
 resource "google_project_service" "compute" {
   project = var.project
   service = "compute.googleapis.com"
-  
+
   timeouts {
     create = "10m"
     delete = "5m"
   }
-  
-  disable_dependent_services=true
+
+  disable_dependent_services = true
 }
 
 data "google_project_service" "compute" {
@@ -37,6 +37,8 @@ resource "google_service_account" "gke" {
 }
 
 resource "google_container_cluster" "primary" {
+  provider = google-beta
+
   name       = local.gke-name
   project    = var.project
   location   = var.region
@@ -48,6 +50,10 @@ resource "google_container_cluster" "primary" {
   # node pool and immediately delete it.
   remove_default_node_pool = true
   initial_node_count       = 1
+
+  cluster_autoscaling {
+    autoscaling_profile = "OPTIMIZE_UTILIZATION"
+  }
 
   ip_allocation_policy {
     # use defaults
