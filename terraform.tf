@@ -14,5 +14,6 @@ provider "google" {
 
 terraform {
   backend "gcs" {
+    #  path = "terraform/state.tfstate"
   }
 }

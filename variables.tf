@@ -22,7 +22,7 @@ variable "vpc-cidr-range" {
 variable "master-ipv4-cidr-block" {
   description = "The IP range in CIDR notation use for the hosted master network"
   type        = string
-  default = "10.5.0.0/28"
+  default     = "10.5.0.0/28"
 }
 
 variable "bigquery_role_assignment" {

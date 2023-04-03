@@ -1,6 +1,6 @@
 # Define variables
-PROJECT_ID=boreal-matrix-382609
-BUCKET_NAME=boreal-matrix-state
+PROJECT_ID=prefab-bedrock-382610 #sage-webbing-382612
+BUCKET_NAME=prefab-bedrock-state #sage-webbing-state
 REGION=europe-west2
 ENV=dev
 

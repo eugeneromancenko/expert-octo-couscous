@@ -7,16 +7,14 @@ Before you begin, you must have the following:
 - Terraform installed on your machine
 - A GCP account with $300 credits or more
 - The `gcloud` CLI tool installed and authenticated with your GCP account
-- Enable the following GCP APIs:
-  - `compute.googleapis.com`
-  - `container.googleapis.com`
+- The `make` CLI tool installed 
 
 ## Getting started
 1. Clone this repository: `git clone <repo-url>`
 2. Navigate to the cloned repository directory: `cd <repo-name>`
-3. Initialize the Terraform working directory: `terraform init -backend-config=./backend.tfvars`
-4. Create a new Terraform execution plan: `terraform plan -var-file=common.tfvars`
-5. Apply the Terraform configuration to create the infrastructure: `terraform apply -var-file=common.tfvars`
+3. update makefile with gcp project specific details like `PROJECT_ID` and specify uniq `BUCKET_NAME` to store tfstate file  
+4. run `make all` to do e2e deployment
+5. run `make destroy` to destroy all resources created
 
 ## Terraform Configuration
 The Terraform code in this repository is split into two tasks:

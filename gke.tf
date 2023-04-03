@@ -28,6 +28,11 @@ resource "google_project_service" "compute" {
   disable_on_destroy = true
 }
 
+data "google_project_service" "compute" {
+  project = var.project
+  service = "compute.googleapis.com"
+}
+
 resource "google_service_account" "gke" {
   account_id   = local.gke-sa
   display_name = "GKE Service Account"
